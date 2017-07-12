@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BBSTV.SalesReports">
+	<StackLayout>
+		<ListView x:Name="SalesReportslistView" HasUnevenRows="true">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout Orientation="Vertical" VerticalOptions="Center" Margin="5">
+							<Label Text="{Binding reportDate}" TextColor="#A7A392" />
+							<Label Text="{Binding ReportDetails}" TextColor="Black" />
+							<Label Text="{Binding nextAppointedDate}" TextColor="Black" />
+							<Label Text="{Binding saleStatus}" TextColor="Red" />
+							<Label Text="SUPERVISOR COMMENTS :" TextColor="#A7A392" />
+							<Label Text="{Binding SupervisorComments}" TextColor="Black" />
+						
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+</ContentPage>

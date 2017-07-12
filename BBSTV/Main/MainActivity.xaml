@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	Padding="0,30,0,0" BackgroundImage="background_nonedit.png"
+	Title="BBS TV MOBILE" 
+	xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BBSTV.MainActivity">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Login"  Icon="login_sales.png" Order="Secondary"  Clicked="OnLogin"/>
+	</ContentPage.ToolbarItems>
+	<Grid RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height=".3*" />
+			<RowDefinition Height=".7*" />
+		</Grid.RowDefinitions>
+		<cv:CarouselView x:Name="AdvertsCarousel">
+			<cv:CarouselView.ItemTemplate>
+				<DataTemplate>
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*" />
+							<RowDefinition Height="Auto" />
+						</Grid.RowDefinitions>
+						<AbsoluteLayout Grid.RowSpan="2">
+							<ActivityIndicator x:Name="advert_activity_indicator" Color="#4D7EE1" AbsoluteLayout.LayoutBounds="0.5,0.5,1,1" AbsoluteLayout.LayoutFlags="PositionProportional" IsRunning="{Binding Source={x:Reference advertImage}, Path=IsLoading}" />
+							<Image Aspect="AspectFill" Source="{Binding PhotoUrl}" x:Name="advertImage" WidthRequest="200" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+						</AbsoluteLayout>
+						<StackLayout Grid.Row="1" BackgroundColor="#80000000" Padding="12">
+							<Label TextColor="White" Text="{Binding company_name}" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+						</StackLayout>
+					</Grid>
+				</DataTemplate>
+			</cv:CarouselView.ItemTemplate>
+		</cv:CarouselView>
+		<!--List  below-->
+		<StackLayout Grid.Row="1" Orientation="Vertical">
+			<ScrollView Orientation="Vertical">
+				<StackLayout Orientation="Vertical">
+					<!--Online -->
+					<StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical" Margin="7">
+						<Label Text="ONLINE" TextColor="#4D7EE1" FontSize="15" Margin="5" FontAttributes="Bold" />
+						<Image Source="all_onair.png" HorizontalOptions="CenterAndExpand" HeightRequest="80">
+							<Image.GestureRecognizers>
+								<TapGestureRecognizer Tapped="onImageOnlineTapped" NumberOfTapsRequired="1" />
+							</Image.GestureRecognizers>
+						</Image>
+					</StackLayout>
+					<!--Citizen Reporter  -->
+					<StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical" Margin="7">
+						<Label Text="CITIZEN REPORTER" TextColor="#4D7EE1" FontSize="15" Margin="5" FontAttributes="Bold" />
+						<Image Source="all_citizen_reporter.png" HorizontalOptions="CenterAndExpand" HeightRequest="80">
+							<Image.GestureRecognizers>
+								<TapGestureRecognizer Tapped="onImageCitizenReporterTapped" NumberOfTapsRequired="1" />
+							</Image.GestureRecognizers>
+						</Image>
+					</StackLayout>
+					<!-- Activity Indicator-->
+					<ActivityIndicator VerticalOptions="Center" HorizontalOptions="Center" x:Name="App_activity_indicator" Color="#4D7EE1" />
+					<!-- Trending Shows -->
+					<StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical" Margin="7" Spacing="0" VerticalOptions="Start">
+						<Label Text="TRENDING SHOWS" TextColor="#4D7EE1" FontSize="15" Margin="5" FontAttributes="Bold" />
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+							</Grid.RowDefinitions>
+							<ListView x:Name="trendingShowslist" HasUnevenRows="true">
+								<ListView.ItemTemplate>
+									<DataTemplate>
+										<ViewCell>
+											<StackLayout Orientation="Horizontal" Margin="5" HeightRequest="90">
+												<Image Source="{Binding PhotoUrl}" WidthRequest="100" HeightRequest="200" Aspect="AspectFit" />
+												<StackLayout VerticalOptions="Center">
+													<Label Text="{Binding show_name}" TextColor="#1C5AD8" />
+													<Label Text="{Binding show_time}" TextColor="#A7A392" FontAttributes="Italic" />
+												</StackLayout>
+												<Image HorizontalOptions="EndAndExpand" HeightRequest="20" WidthRequest="20" Source="more_icon.png" />
+											</StackLayout>
+										</ViewCell>
+									</DataTemplate>
+								</ListView.ItemTemplate>
+							</ListView>
+						</Grid>
+					</StackLayout>
+					<!-- Activity Indicator-->
+					<ActivityIndicator VerticalOptions="Center" HorizontalOptions="Center" x:Name="news_activity_indicator" Color="#4D7EE1" />
+					<!-- News   -->
+					<StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical" Margin="7" Spacing="0" VerticalOptions="Start">
+						<Label Text="NEWS" TextColor="#4D7EE1" FontSize="15" Margin="5" FontAttributes="Bold" />
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+							</Grid.RowDefinitions>
+							<ListView x:Name="newslist" HasUnevenRows="true">
+								<ListView.ItemTemplate>
+									<DataTemplate>
+										<ViewCell>
+											<StackLayout Orientation="Horizontal" Margin="5" HeightRequest="90">
+												<Image Source="maincat_icons.png" WidthRequest="40" HeightRequest="40" Aspect="AspectFit" />
+												<StackLayout VerticalOptions="Center">
+													<Label Text="{Binding news_title}" TextColor="#1C5AD8" />
+													<Label Text="{Binding news_date_formatted}" TextColor="#A7A392" FontAttributes="Italic" />
+												</StackLayout>
+												<Image HorizontalOptions="EndAndExpand" HeightRequest="20" WidthRequest="20" Source="more_icon.png" />
+											</StackLayout>
+										</ViewCell>
+									</DataTemplate>
+								</ListView.ItemTemplate>
+							</ListView>
+						</Grid>
+					</StackLayout>
+
+				</StackLayout>
+			</ScrollView>
+		</StackLayout>
+	</Grid>
+</ContentPage>

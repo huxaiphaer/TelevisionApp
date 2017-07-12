@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	Title="Sales Login" 
+	BackgroundImage="background_nonedit.png"
+	x:Class="BBSTV.LoginSales">
+	<StackLayout VerticalOptions="Center" HorizontalOptions="Fill" Padding="10">
+		<Label TextColor="#4D7EE1" Text="Enter Your Credentials" VerticalOptions="Center" HorizontalOptions="Center" />
+		<Entry Placeholder="Username" PlaceholderColor="#81B3F5" Margin="8" VerticalOptions="Center" x:Name="username" HeightRequest="40" />
+		<Entry Placeholder="Password" IsPassword="true" PlaceholderColor="#81B3F5" Margin="8" VerticalOptions="Center" x:Name="password" HeightRequest="40" />
+		<Button Text="LOGIN" Margin="8" Clicked="onLogingingIn" TextColor="White" BackgroundColor="#4D7EE1" />
+		<ActivityIndicator x:Name="activity_i_sales_logining" Color="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+	</StackLayout>
+</ContentPage>

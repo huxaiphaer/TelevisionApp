@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BBSTV.MyClients">
+	<StackLayout>
+		<ActivityIndicator VerticalOptions="Center" HorizontalOptions="Center" x:Name="salesreport_activity_indicator" Color="#4D7EE1" />
+		<ListView x:Name="MyClientslistView" HasUnevenRows="true"  ItemTapped="OnSalesReport">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						
+							<StackLayout Orientation="Vertical" VerticalOptions="Center"  Margin="5" >
+								<Label Text="{Binding client_name}" TextColor="#A7A392" />
+
+								<Label Text="{Binding client_address}" TextColor="Black" />
+								<Label Text="{Binding client_phone}"  TextColor="Black" />
+								<Label Text="{Binding client_email}"  TextColor="Black" />
+								<Label Text="{Binding AssignStatus}"  TextColor="Black" />
+								<Label Text="{Binding assignmentComments}"  TextColor="Black" />
+
+
+							</StackLayout>
+						
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+</ContentPage>

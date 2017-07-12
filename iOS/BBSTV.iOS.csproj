@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{C2A31E39-37BF-4A22-9FB4-E9B470AED95D}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>BBSTV.iOS</RootNamespace>
+    <AssemblyName>BBSTV.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer: halimkas@yahoo.com (SZLVVTKT87)</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>10983</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision></CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+    <BuildIpa>true</BuildIpa>
+    <IpaIncludeArtwork>true</IpaIncludeArtwork>
+    <IpaMetadata>Info.plist</IpaMetadata>
+    <IpaPackageName>MyName</IpaPackageName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision>4604d469-01b3-41de-9b9d-1cde58121f6c</CodesignProvision>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.3.5.239-pre3\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.3.5.239-pre3\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.2.3.5.239-pre3\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.3.5.239-pre3\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre1\lib\Xamarin.iOS10\Xamarin.Forms.CarouselView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView.iOS">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre1\lib\Xamarin.iOS10\Xamarin.Forms.CarouselView.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView.Platform">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre1\lib\Xamarin.iOS10\Xamarin.Forms.CarouselView.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.MediaManager.Abstractions">
+      <HintPath>..\packages\Plugin.MediaManager.0.4.0\lib\Xamarin.iOS10\Plugin.MediaManager.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.MediaManager">
+      <HintPath>..\packages\Plugin.MediaManager.0.4.0\lib\Xamarin.iOS10\Plugin.MediaManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.MediaManager.Forms">
+      <HintPath>..\packages\Plugin.MediaManager.Forms.0.4.0\lib\xamarinios\Plugin.MediaManager.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.MediaManager.Forms.iOS">
+      <HintPath>..\packages\Plugin.MediaManager.Forms.0.4.0\lib\xamarinios\Plugin.MediaManager.Forms.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.4.0.72-beta\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.4.0.72-beta\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="InTheHand.Forms">
+      <HintPath>..\packages\InTheHand.Forms.1.0.2017.0422\lib\xamarinios\InTheHand.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="InTheHand.Forms.Platform.iOS">
+      <HintPath>..\packages\InTheHand.Forms.1.0.2017.0422\lib\xamarinios\InTheHand.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Media.2.7.0.50-beta\lib\Xamarin.iOS10\Plugin.Media.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media">
+      <HintPath>..\packages\Xam.Plugin.Media.2.7.0.50-beta\lib\Xamarin.iOS10\Plugin.Media.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BBSTV\BBSTV.csproj">
+      <Project>{18DA5867-946C-4300-8E51-7F934A54EA50}</Project>
+      <Name>BBSTV</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\app_icon_small.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\launchscreen%401x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\launchscreen%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\launchscreen_5.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\launchscree_s%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\launchscreen7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\all_category.png" />
+    <BundleResource Include="Resources\all_citizen_reporter.png" />
+    <BundleResource Include="Resources\all_onair.png" />
+    <BundleResource Include="Resources\app_icon_small.png" />
+    <BundleResource Include="Resources\background_nonedit.png" />
+    <BundleResource Include="Resources\featured_bbs_1.png" />
+    <BundleResource Include="Resources\featured_bbs_2.png" />
+    <BundleResource Include="Resources\featured_bbs_3.png" />
+    <BundleResource Include="Resources\featured_bbs_4.png" />
+    <BundleResource Include="Resources\featured_bbs.png" />
+    <BundleResource Include="Resources\ic_allcategories.png" />
+    <BundleResource Include="Resources\ic_call.png" />
+    <BundleResource Include="Resources\ic_cash.png" />
+    <BundleResource Include="Resources\ic_comm.png" />
+    <BundleResource Include="Resources\ic_cont.png" />
+    <BundleResource Include="Resources\ic_contacts.png" />
+    <BundleResource Include="Resources\ic_dots.png" />
+    <BundleResource Include="Resources\ic_login.png" />
+    <BundleResource Include="Resources\ic_profile.png" />
+    <BundleResource Include="Resources\ic_searching.png" />
+    <BundleResource Include="Resources\ic_sms.png" />
+    <BundleResource Include="Resources\itembackground_small.png" />
+    <BundleResource Include="Resources\maincat_icons.png" />
+    <BundleResource Include="Resources\more_icon.png" />
+    <BundleResource Include="Resources\nologo_large.png" />
+    <BundleResource Include="Resources\profile_background.png" />
+    <BundleResource Include="Resources\searchbox.png" />
+    <BundleResource Include="Resources\splashscreen_nonedit.png" />
+    <BundleResource Include="Resources\splashscreen.png" />
+    <BundleResource Include="Resources\tab_back_final.png" />
+    <BundleResource Include="Resources\thumb_amaaso.png" />
+    <BundleResource Include="Resources\thumb_seleebu.png" />
+    <BundleResource Include="Resources\thumb_sitima.png" />
+    <BundleResource Include="Resources\thumb_twaliwo.png" />
+    <BundleResource Include="Resources\thumb_zuukuka.png" />
+    <BundleResource Include="Resources\launchscree_s%402x.png" />
+    <BundleResource Include="Resources\launchscreen_5.png" />
+    <BundleResource Include="Resources\launchscreen%401x.png" />
+    <BundleResource Include="Resources\launchscreen7.png" />
+    <BundleResource Include="Resources\login_sales.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.5.239-pre3\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.5.239-pre3\build\netstandard1.0\Xamarin.Forms.targets')" />
+</Project>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	BackgroundImage="background_nonedit.png"
+	xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView" 
+	 xmlns:forms="clr-namespace:InTheHand.Forms;assembly=InTheHand.Forms"
+	Title="Online Streaming" x:Class="BBSTV.OnlineStreaming">
+
+	<ScrollView>
+<StackLayout  >
+		<cv:CarouselView x:Name="OnlineAdvertsCarousel"  Margin="5" BackgroundColor="#88D2FF" VerticalOptions="Start" >
+			<cv:CarouselView.ItemTemplate>
+				<DataTemplate>
+					  <StackLayout Orientation="Horizontal">
+						<Image  Aspect="AspectFit" Source="{Binding PhotoUrl}" HeightRequest="20"
+							x:Name="OnlineadvertImage" 
+								WidthRequest="70"/>
+							<AbsoluteLayout>
+								
+							<Label TextColor="White" Text="{Binding company_name}"  AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" 
+							FontSize="12" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+							</AbsoluteLayout>
+
+					</StackLayout>
+					
+					
+				</DataTemplate>
+			</cv:CarouselView.ItemTemplate>
+		</cv:CarouselView>
+		<ActivityIndicator  x:Name="online_activity_indicator" Margin="4" Color="#277DF1"
+								/>
+
+			
+		<Label  Text ="Current Program"  VerticalOptions="Center" HorizontalOptions="Center" 
+			TextColor="#58BCFA" FontSize="16"/>
+        <forms:MediaElement HorizontalOptions="Fill"    Source="http://video.ch9.ms/ch9/334f/891b78a5-642d-40b4-8d02-ff40ffdd334f/LoginToLinkedinUSingXamarinAuth_mid.mp4" VerticalOptions="Center"
+		HeightRequest="240" x:Name="Media" IsLooping="True"  
+				
+		AreTransportControlsEnabled="true"
+	/>
+
+
+    </StackLayout>
+	</ScrollView>
+</ContentPage>

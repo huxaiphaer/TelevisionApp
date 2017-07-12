@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	BackgroundImage="background_nonedit.png"
+
+	Title="Citizen Reporter" x:Class="BBSTV.CitizenReporter">
+	<ScrollView>
+		<StackLayout VerticalOptions="Center" HorizontalOptions="Fill" Padding="10">
+			<Image x:Name="citizenImage" WidthRequest="400" HeightRequest="220" />
+		
+			<Entry Placeholder="Names " PlaceholderColor="#81B3F5" Margin="8" VerticalOptions="Center" x:Name="names_entry" HeightRequest="40" />
+			<Entry Placeholder="Phone Number" Keyboard="Telephone" PlaceholderColor="#81B3F5" Margin="8" VerticalOptions="Center" x:Name="phoneNumber_entry" HeightRequest="40" />
+			<Entry Placeholder="News Title" PlaceholderColor="#81B3F5" Margin="8" VerticalOptions="Center" x:Name="title_entry" HeightRequest="40" />
+			<Entry Placeholder="News Details" PlaceholderColor="#81B3F5" Margin="8" VerticalOptions="Center" x:Name="details_entry" HeightRequest="90" />
+			<ActivityIndicator x:Name="activity_i_citizenReport" Color="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+			<!-- Radio buttoon -->
+			<Picker  x:Name="citizenReport_picker" Title="Choose Media Type"  TextColor="#4D7EE1">
+				<Picker.Items>
+                <x:String>Video </x:String>
+                <x:String>Image</x:String>
+
+            </Picker.Items>
+
+			</Picker>
+
+			  <Label x:Name="txtSelected" Text="" VerticalOptions="Center" HorizontalOptions="Center" />
+			<Button Text="CHOOSE MEDIA" Margin="8" Clicked="onChooseMedia" TextColor="White" BackgroundColor="#4D7EE1" />
+			<Button Text="TAKE  MEDIA" Margin="8" Clicked="onTakeMedia" TextColor="White" BackgroundColor="#4D7EE1" />
+			<Button Text="UPLOAD REPORT" Margin="9" Clicked="UploadFile_Clicked" TextColor="White" BackgroundColor="#F399FC  " />
+		</StackLayout>
+	</ScrollView>
+</ContentPage>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" Title="Agent Details" 
+	BackgroundImage="background_nonedit.png" x:Class="BBSTV.LoginSalesDetails">
+	<ScrollView>
+	<StackLayout>
+		
+		
+		<StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,20,0,0">
+			<Label TextColor="#4D7EE1" Text="ACCOUNT NAME :" VerticalOptions="Center" HorizontalOptions="Center" />
+			<Label TextColor="Black" x:Name="accountname_label" Text="Mr Andrew" VerticalOptions="Center" HorizontalOptions="Center" />
+		</StackLayout>
+		<Label Margin="5" />
+		<BoxView HeightRequest="1" Margin="5" BackgroundColor="#4D7EE1" HorizontalOptions="FillAndExpand" />
+		<Label />
+
+		<TableView Intent="Form" x:Name="sales_tableView">
+			<TableView.Root >
+				<TableSection Title="Agent Sales Details">
+					
+					<TextCell Text="Agent Number" x:Name="agentNumber_txtcell" DetailColor="Purple"   />
+					<TextCell Text="Agent Rating "  x:Name="agentrating_txtcell" DetailColor="Purple"/>
+					<TextCell Text="Agent Phone "  x:Name="agentphone_txtcell" DetailColor="Purple" />
+					<TextCell Text="Agent Email " x:Name="agentemail_txtcell" DetailColor="Purple" />
+
+				</TableSection>
+			</TableView.Root>
+		</TableView>
+
+		<Button Text="MY CLIENTS" Margin="8" Clicked="onMyClients" TextColor="White" BackgroundColor="#4D7EE1" />
+	
+	</StackLayout>
+			</ScrollView>
+</ContentPage>

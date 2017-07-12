@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{18DA5867-946C-4300-8E51-7F934A54EA50}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UseMSBuildEngine>true</UseMSBuildEngine>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BBSTV</RootNamespace>
+    <AssemblyName>BBSTV</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App.xaml" />
+    <EmbeddedResource Include="BBSTVPage.xaml" />
+    <EmbeddedResource Include="Main\MainActivity.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\ControlPanel.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\OnlineStreaming.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\CitizenReporter.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\TrendingShowsDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\NewsDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\LoginSales.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\LoginSalesDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\MyClients.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\SalesReports.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BBSTVPage.xaml.cs">
+      <DependentUpon>BBSTVPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Main\MainActivity.xaml.cs">
+      <DependentUpon>MainActivity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="model\Adverts.cs" />
+    <Compile Include="Helpers\Grouping.cs" />
+    <Compile Include="Helpers\MonkeyHelper.cs" />
+    <Compile Include="model\Monkey.cs" />
+    <Compile Include="Main\ControlPanel.xaml.cs">
+      <DependentUpon>ControlPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="model\Trend.cs" />
+    <Compile Include="Main\AdvertsListViewModel.cs" />
+    <Compile Include="WebConnection\WebApi.cs" />
+    <Compile Include="Main\OnlineStreaming.xaml.cs">
+      <DependentUpon>OnlineStreaming.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Main\CitizenReporter.xaml.cs">
+      <DependentUpon>CitizenReporter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Main\AddBaseUrlConverter.cs" />
+    <Compile Include="Main\TrendingShowsDetails.xaml.cs">
+      <DependentUpon>TrendingShowsDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="model\News.cs" />
+    <Compile Include="Main\NewsDetails.xaml.cs">
+      <DependentUpon>NewsDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\YoutubeViewPage.cs" />
+    <Compile Include="ViewModels\YoutubeViewModel.cs" />
+    <Compile Include="Models\YoutubeItem.cs" />
+    <Compile Include="model\Citizen.cs" />
+    <Compile Include="Main\LoginSales.xaml.cs">
+      <DependentUpon>LoginSales.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Main\LoginSalesDetails.xaml.cs">
+      <DependentUpon>LoginSalesDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="model\Login.cs" />
+    <Compile Include="Main\MyClients.xaml.cs">
+      <DependentUpon>MyClients.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="model\MyClientsModal.cs" />
+    <Compile Include="Main\SalesReports.xaml.cs">
+      <DependentUpon>SalesReports.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="model\MySalesReportModal.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.3.5.239-pre3\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.3.5.239-pre3\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.3.5.239-pre3\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre1\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.CarouselView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView.Platform">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre1\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.CarouselView.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8+wpa81\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8+wpa81\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\portable-net45+win8+wpa81+wp8\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.MediaManager.Abstractions">
+      <HintPath>..\packages\Plugin.MediaManager.0.4.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Plugin.MediaManager.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.MediaManager">
+      <HintPath>..\packages\Plugin.MediaManager.0.4.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Plugin.MediaManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.MediaManager.Forms">
+      <HintPath>..\packages\Plugin.MediaManager.Forms.0.4.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Plugin.MediaManager.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.4.0.72-beta\lib\portable-net45+wp80+win8+wpa81\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.4.0.72-beta\lib\portable-net45+wp80+win8+wpa81\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="InTheHand.Forms">
+      <HintPath>..\packages\InTheHand.Forms.1.0.2017.0422\lib\portable-net45+netcore45+wpa81+wp8\InTheHand.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Media.2.7.0.50-beta\lib\portable-net45+wp80+win8+wpa81\Plugin.Media.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media">
+      <HintPath>..\packages\Xam.Plugin.Media.2.7.0.50-beta\lib\portable-net45+wp80+win8+wpa81\Plugin.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.BindablePicker">
+      <HintPath>..\packages\Xamarin.Forms.BindablePicker.1.0.0\lib\Xamarin.Forms.BindablePicker.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="drawable\images\serebu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Main\" />
+    <Folder Include="model\" />
+    <Folder Include="drawable\" />
+    <Folder Include="New Folder\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="WebConnection\" />
+    <Folder Include="CustomizedWidgets\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.5.239-pre3\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.5.239-pre3\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+</Project>
