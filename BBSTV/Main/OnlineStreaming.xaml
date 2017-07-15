@@ -8,11 +8,13 @@
 
 	<ScrollView>
 <StackLayout  >
+			<!--
+			//AdMobs 
 		<cv:CarouselView x:Name="OnlineAdvertsCarousel"  Margin="5" BackgroundColor="#88D2FF" VerticalOptions="Start" >
 			<cv:CarouselView.ItemTemplate>
 				<DataTemplate>
 					  <StackLayout Orientation="Horizontal">
-						<Image  Aspect="AspectFit" Source="{Binding PhotoUrl}" HeightRequest="20"
+						<Image  Aspect="AspectFit" Source="{Binding PhotoUrl2}" HeightRequest="20"
 							x:Name="OnlineadvertImage" 
 								WidthRequest="70"/>
 							<AbsoluteLayout>
@@ -27,18 +29,26 @@
 				</DataTemplate>
 			</cv:CarouselView.ItemTemplate>
 		</cv:CarouselView>
+		<Label  Text ="Current Program"  VerticalOptions="Center" HorizontalOptions="Center" 
+			TextColor="#58BCFA" FontSize="16"/>
+			-->
 		<ActivityIndicator  x:Name="online_activity_indicator" Margin="4" Color="#277DF1"
 								/>
 
 			
-		<Label  Text ="Current Program"  VerticalOptions="Center" HorizontalOptions="Center" 
-			TextColor="#58BCFA" FontSize="16"/>
+		
+			<!--
         <forms:MediaElement HorizontalOptions="Fill"    Source="http://video.ch9.ms/ch9/334f/891b78a5-642d-40b4-8d02-ff40ffdd334f/LoginToLinkedinUSingXamarinAuth_mid.mp4" VerticalOptions="Center"
 		HeightRequest="240" x:Name="Media" IsLooping="True"  
 				
 		AreTransportControlsEnabled="true"
 	/>
+	-->
+			<ActivityIndicator  x:Name="stream_activity_indicator" Margin="4" Color="#277DF1"
+								/>
 
+
+			<WebView VerticalOptions="FillAndExpand" x:Name="online_webView"/>
 
     </StackLayout>
 	</ScrollView>

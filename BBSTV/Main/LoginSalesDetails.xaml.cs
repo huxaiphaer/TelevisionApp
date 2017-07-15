@@ -15,21 +15,29 @@ namespace BBSTV
 		int heightRowsList = 90;
 
 		public string username;
-		public LoginSalesDetails(string Username,  string AgentNo, string AgentName, string AgentPhone, string AgentEmail, int AgentRating)
+		public LoginSalesDetails()
 		{
 			InitializeComponent();
 
 
+			LocalDB local = new LocalDB();
+			string USERNAME = local.GetUsernames();
+			string AGENTNO = local.GetAgentNumber();
+			string AGENTNAME = local.GetAgentName();
+			string AGENTPHONE = local.GetAgentPhone();
+			string AGENTEMAIL = local.GetAgentEmail();
+			int AGENTRATING = local.GetAgentRating();
+
 			// No_A = AgentNo;
-			accountname_label.Text = AgentName;
+			accountname_label.Text = AGENTNAME;
 
-			agentNumber_txtcell.Detail = AgentNo;
-			agentphone_txtcell.Detail = AgentPhone;
-			agentemail_txtcell.Detail = AgentEmail;
-			agentrating_txtcell.Detail = "" + AgentRating;
-			this.username = Username;
+			//agentNumber_txtcell.Detail = AGENTNO;
+			agentphone_txtcell.Detail = AGENTPHONE;
+			agentemail_txtcell.Detail = AGENTEMAIL;
+			agentrating_txtcell.Detail = "" + AGENTRATING;
+			this.username = USERNAME;
 
-		
+
 
 			// Wraping the height of the TableView 
 
@@ -39,6 +47,10 @@ namespace BBSTV
 
 		}
 
+		async void onMySalesInfo(object sender, System.EventArgs e)
+		{
+			await Navigation.PushAsync(new RecordSales());
+		}
 
 
 

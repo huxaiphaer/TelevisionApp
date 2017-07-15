@@ -22,10 +22,10 @@
 						</Grid.RowDefinitions>
 						<AbsoluteLayout Grid.RowSpan="2">
 							<ActivityIndicator x:Name="advert_activity_indicator" Color="#4D7EE1" AbsoluteLayout.LayoutBounds="0.5,0.5,1,1" AbsoluteLayout.LayoutFlags="PositionProportional" IsRunning="{Binding Source={x:Reference advertImage}, Path=IsLoading}" />
-							<Image Aspect="AspectFill" Source="{Binding PhotoUrl}" x:Name="advertImage" WidthRequest="200" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+							<Image Aspect="AspectFill" Source="{Binding PhotoUrl2}" x:Name="advertImage" WidthRequest="200" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
 						</AbsoluteLayout>
 						<StackLayout Grid.Row="1" BackgroundColor="#80000000" Padding="12">
-							<Label TextColor="White" Text="{Binding company_name}" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+							<Label TextColor="White" Text="{Binding client_name}" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
 						</StackLayout>
 					</Grid>
 				</DataTemplate>

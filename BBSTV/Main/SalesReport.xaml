@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	BackgroundImage="background_nonedit.png" Title="SALES REPORT"
+	x:Class="BBSTV.SalesReport">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Add Report" Icon="plus_icon.png" Order="Secondary" Clicked="OnAdd" />
+	</ContentPage.ToolbarItems>
+	<StackLayout>
+		<ActivityIndicator VerticalOptions="Center" HorizontalOptions="Center" x:Name="sp_activity_indicator" Color="#4D7EE1" />
+		<ListView x:Name="SalesReportslistView" HasUnevenRows="true">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout Orientation="Vertical" VerticalOptions="Center" Margin="5">
+							<StackLayout Orientation="Horizontal">
+								<Label Text="Sales Report For:" TextColor="#4D7EE1" />
+								<Label Text="{Binding reportDate}" TextColor="#4D7EE1" />
+							</StackLayout>
+							<Label Text="{Binding ReportDetails}" TextColor="Black" />
+							<StackLayout Orientation="Horizontal">
+								<Label Text="NEXT APPOINTMENT:" TextColor="Black" />
+								<Label Text="{Binding nextAppointedDate}" TextColor="Black" />
+							</StackLayout>
+							<StackLayout Orientation="Horizontal">
+								<Label Text="SALE STATUS : " TextColor="Red" />
+								<Label Text="{Binding saleStatus}" TextColor="Red" />
+							</StackLayout>
+							<Label Text="SUPERVISOR COMMENTS :" TextColor="#4D7EE1" />
+							<Label Text="{Binding SupervisorComments}" TextColor="Black" />
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+</ContentPage>

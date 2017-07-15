@@ -14,7 +14,7 @@
 		<BoxView HeightRequest="1" Margin="5" BackgroundColor="#4D7EE1" HorizontalOptions="FillAndExpand" />
 		<Label />
 
-		<TableView Intent="Form" x:Name="sales_tableView">
+		<TableView Intent="Form" x:Name="sales_tableView" RowHeight="-1">
 			<TableView.Root >
 				<TableSection Title="Agent Sales Details">
 					
@@ -28,7 +28,7 @@
 		</TableView>
 
 		<Button Text="MY CLIENTS" Margin="8" Clicked="onMyClients" TextColor="White" BackgroundColor="#4D7EE1" />
-	
+	<Button Text="MY SALES INFO" Margin="8" Clicked="onMySalesInfo" TextColor="White" BackgroundColor="#4D7EE1" />     
 	</StackLayout>
 			</ScrollView>
 </ContentPage>

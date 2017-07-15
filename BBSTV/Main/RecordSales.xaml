@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:mypages="clr-namespace:BBSTV;assembly=BBSTV"
+	x:Class="BBSTV.RecordSales">
+	<TabbedPage.Children>
+		<mypages:SalesTab Title="SALES"  Icon="sales_tab.png" />
+		<mypages:TargetsTab Title="TARGETS"  Icon="target_icon.png"/>
+		<mypages:PlansTab Title="PLANS" Icon="plan_icon.png" />
+	</TabbedPage.Children>
+</TabbedPage>

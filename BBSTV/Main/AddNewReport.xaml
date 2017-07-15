@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" BackgroundImage="background_nonedit.png" Title="ADD NEW REPORT" x:Class="BBSTV.AddNewReport">
+	<ContentPage.Content>
+	</ContentPage.Content>
+	<StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+		<ActivityIndicator VerticalOptions="Center" HorizontalOptions="Center" x:Name="addnew_activity_indicator" Color="#4D7EE1" />
+		<Entry Placeholder="Report Details" PlaceholderColor="#81B3F5" Margin="8" VerticalOptions="Center" x:Name="report_details_entry" HeightRequest="90" />
+		<Entry Placeholder="Next Appointment Date" PlaceholderColor="#81B3F5" Margin="8" VerticalOptions="Center" x:Name="nextappointment_entry" HeightRequest="40" />
+			<Label Text="pick date " TextColor="#4D7EE1"  FontSize="10"/>
+		<DatePicker x:Name="StartDatePicker" Format="dd/MM/yyyy"  TextColor="#4D7EE1" Date="{Binding Item.StartDate}" MinimumDate="{Binding Item.StartDate}" />
+		
+		<Button Text="SUBMIT REPORT" Margin="8" Clicked="OnSubmitReport"  TextColor="White" BackgroundColor="#4D7EE1" />
+	</StackLayout>
+</ContentPage>

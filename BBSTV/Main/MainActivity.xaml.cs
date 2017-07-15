@@ -29,30 +29,18 @@ namespace BBSTV
 		private const string BaseImageUrl = "http://eamobiledirectory.com/cooperp/Images/app_images/";
 		private const string Url_Trend = "http://bbs.eamobiledirectory.com/Mobile/mobileApi.aspx?Action=TrendingShows";
 		private const string Url_News = "http://bbs.eamobiledirectory.com/Mobile/mobileApi.aspx?Action=NewsHeadlines";
+		private const string Url_Adverts = "http://bbs.eamobiledirectory.com/Mobile/mobileApi.aspx?Action=MainAdverts";
 		private HttpClient _client = new HttpClient();
 		public ObservableCollection<Adverts> adverts;
 		//	public ObservableCollection<Trend> trends;
 		public MainActivity()
 		{
 			InitializeComponent();
+			LocalDB local = new LocalDB();
 
 
-
-			//TrendingShows();
-
-
-
-
-			//LoadData();
 			OnNewsList();
-
 			OnTrendingList();
-
-
-
-
-
-
 
 			trendingShowslist.ItemTapped += async (sender, args) =>
 			{
@@ -80,7 +68,6 @@ namespace BBSTV
 		}
 
 
-
 		async void onImageCitizenReporterTapped(object sender, System.EventArgs e)
 		{
 			await Navigation.PushAsync(new CitizenReporter());
@@ -102,7 +89,7 @@ namespace BBSTV
 					//Activity indicator visibility on
 					//App_activity_indicator.IsVisible = true;
 
-					var content = await _client.GetStringAsync(Url);
+					var content = await _client.GetStringAsync(Url_Adverts);
 					var adv = JsonConvert.DeserializeObject<List<Adverts>>(content);
 
 					adverts = new ObservableCollection<Adverts>(adv);
@@ -142,8 +129,6 @@ namespace BBSTV
 
 
 		}
-
-
 
 
 
@@ -256,37 +241,59 @@ namespace BBSTV
 
 		public async void OnLogin(object sender, System.EventArgs e)
 		{
-			await Navigation.PushAsync(new LoginSales());
-
-		}
 
 
-
-
-
-
-
-			/*
-
-
-	// Another way of retrieving data into the listView 
-			public async void LoadData()
+			try
 			{
-				var content = "";
-				HttpClient client = new HttpClient();
+				LocalDB local = new LocalDB();
+				if (local.GetUsernames() != "zero")
+				{
+
+					await Navigation.PushAsync(new LoginSalesDetails());
+				}
+
+				else
+				{
+					await Navigation.PushAsync(new LoginSales());
 
 
-				client.BaseAddress = new Uri(Url_Trend);
-				client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-				HttpResponseMessage response = await client.GetAsync(Url_Trend);
-				content = await response.Content.ReadAsStringAsync();
-				var Items = JsonConvert.DeserializeObject<List<Trend>>(content);
-				trendingShowslist.ItemsSource = Items;
+				}
 
-				int i = Items.Count;
-				i = (Items.Count * heightRowsList);
-				trendingShowslist.HeightRequest = i;
 			}
-	*/
+
+			catch (Exception exc)
+			{
+
+			}
 		}
+
+
+
+
+
+
+
+		/*
+
+
+// Another way of retrieving data into the listView 
+		public async void LoadData()
+		{
+			var content = "";
+			HttpClient client = new HttpClient();
+
+
+			client.BaseAddress = new Uri(Url_Trend);
+			client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+			HttpResponseMessage response = await client.GetAsync(Url_Trend);
+			content = await response.Content.ReadAsStringAsync();
+			var Items = JsonConvert.DeserializeObject<List<Trend>>(content);
+			trendingShowslist.ItemsSource = Items;
+
+			int i = Items.Count;
+			i = (Items.Count * heightRowsList);
+			trendingShowslist.HeightRequest = i;
+		}
+*/
 	}
+}

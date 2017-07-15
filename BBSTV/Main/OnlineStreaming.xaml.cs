@@ -33,6 +33,10 @@ namespace BBSTV
 
 			//this.Appearing += MainPage_Appearing;
 
+			stream_activity_indicator.IsVisible = true;
+			online_webView.Source = "https://livestream.com/accounts/2266580";
+			stream_activity_indicator.IsVisible = false;
+
 		}
 
 
@@ -61,7 +65,7 @@ namespace BBSTV
 
 
 
-
+		/*
 
 		protected override async void OnAppearing()
 		{
@@ -110,7 +114,7 @@ namespace BBSTV
 
 
 		}
-
+*/
 
 
 
